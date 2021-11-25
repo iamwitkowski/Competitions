@@ -18,11 +18,11 @@
 		public function createAPI()
 		{
 			add_action('rest_api_init', function () {
-				register_rest_route('competition/v1', '/all/', array(
+				register_rest_route(''.COMPETITION_NAME.'/v1', '/all/', array(
 					'methods' => 'GET',
 					'callback' => 'api_get_callback'
 				));
-				register_rest_route( 'compliments/v1', '/create/', array(
+				register_rest_route( ''.COMPETITION_NAME.'/v1', '/create/', array(
 					'methods' => 'POST',
 					'callback' => 'api_post_callback'
 				));
