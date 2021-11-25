@@ -11,13 +11,21 @@
 	*/
 	
 	require_once ('config.php');
-	require_once ('inc/API.php');
-	require_once ('inc/submissions.php');
-	require_once ('inc/callbacks.php');
 	
+	include ('classes/API.php');
+	include ('classes/Submissions.php');
+	include ('classes/EmailLog.php');
+
+	include ('inc/callbacks.php');
+	include ('admin/columns.php');
+
 	use competitions\API;
+	use competitions\Submissions;
+	use competitions\EmailLog;
+	
 	
 	$api = new API();
 	$api->createAPI();
 	
-	
+	$submission = new Submissions();
+	$emailLog = new EmailLog();

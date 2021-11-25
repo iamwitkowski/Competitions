@@ -7,7 +7,7 @@
 	
 	function api_get_callback($request)
 	{
-		$posts = get_posts( [ 'post_type' => COMPETITION_NAME, 'post_status' => 'publish' ] );
+		$posts = get_posts( [ 'post_type' => COMPETITION_NAME, 'post_status' => 'draft' ] );
 		if( count($posts) > 0 ){
 			$response['status'] =  200;
 			$response['success'] = true;
@@ -34,7 +34,7 @@
 			
 			$post['post_title'] = sanitize_text_field( $request->get_param( 'name' ) ) . ' przesyła życzenia';
 			$post['post_content'] = sanitize_text_field( $request->get_param( 'content' ) );
-			$post['post_status'] = 'publish';
+			$post['post_status'] = 'draft';
 			$post['post_type'] = COMPETITION_NAME;
 			$post['meta_input'] = [
 				'name' => sanitize_text_field( $request->get_param( 'name' ) ),
