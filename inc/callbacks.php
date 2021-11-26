@@ -24,9 +24,9 @@
 	
 	
 	/**
-	 * Create a compliment and submission by rest api
+	 * Post submission by rest api
 	 * @param  object $request WP_Request with data
-	 * @return obeject         WP_REST_Response
+	 * @return object WP_REST_Response
 	 */
 	function api_post_callback( $request ){
 		

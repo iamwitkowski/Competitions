@@ -1,5 +1,10 @@
 <?php
 	
+	/*
+	 * create sumbissions CPT
+	 *
+	 */
+	
 	namespace competitions;
 	
 	class Submissions

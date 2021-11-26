@@ -13,19 +13,26 @@
 	require_once ('config.php');
 	
 	include ('classes/API.php');
-	include ('classes/Submissions.php');
-	include ('classes/EmailLog.php');
-
+	include ('classes/CPT/Submissions.php');
+	include ('classes/CPT/EmailLog.php');
+	include ('classes/admin/Columns.php');
+	include ('classes/admin/ChangeStatus.php');
 	include ('inc/callbacks.php');
-	include ('admin/columns.php');
-
+	
+	include ('helpers/extendedSearch.php');
+	
 	use competitions\API;
 	use competitions\Submissions;
 	use competitions\EmailLog;
-	
+	use competitions\Columns;
+	use competitions\ChangeStatus;
 	
 	$api = new API();
 	$api->createAPI();
 	
 	$submission = new Submissions();
 	$emailLog = new EmailLog();
+	
+	$columns = new Columns();
+	$changeStatus = new ChangeStatus();
+	

@@ -1,4 +1,8 @@
 <?php
+	/*
+	 * create E-mail log for monitor e-mails
+	 *
+	 */
 	
 	namespace competitions;
 	
