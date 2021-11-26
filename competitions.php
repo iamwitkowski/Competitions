@@ -11,14 +11,16 @@
 	*/
 	
 	require_once ('config.php');
-	
+
 	include ('classes/API.php');
 	include ('classes/CPT/Submissions.php');
 	include ('classes/CPT/EmailLog.php');
 	include ('classes/admin/Columns.php');
 	include ('classes/admin/ChangeStatus.php');
-	include ('inc/callbacks.php');
+	include ('classes/mailService/mailService.php');
 	
+	include ('inc/callbacks.php');
+	include ('inc/fields.php');
 	include ('helpers/extendedSearch.php');
 	
 	use competitions\API;
@@ -26,6 +28,7 @@
 	use competitions\EmailLog;
 	use competitions\Columns;
 	use competitions\ChangeStatus;
+	use competitions\mailService;
 	
 	$api = new API();
 	$api->createAPI();
@@ -35,4 +38,10 @@
 	
 	$columns = new Columns();
 	$changeStatus = new ChangeStatus();
+	
+	$mailService = new mailService();
+	
+	
+	
+	
 	

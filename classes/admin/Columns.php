@@ -40,11 +40,27 @@
 		
 		function submission_column( $column, $post_id )
 		{
+			if ($column == 'name') {
+				echo get_post_meta($post_id, 'name', true);
+			}
 			if ($column == 'answer') {
 				echo get_post_meta($post_id, 'answer', true);
 			}
 			if ($column == 'status') {
-				echo get_post_meta($post_id, 'status', true);
+				$status = get_post_meta($post_id, 'status', true);
+				if($status === 'accept') {
+					$status = 'zaakceptowano';
+				}
+				if($status === 'reject') {
+					$status = 'odrzucone';
+				}
+				if($status === 'waiting') {
+					$status = 'oczekuje';
+				}
+				echo $status;
+			}
+			if ($column == 'mail') {
+				echo get_post_meta($post_id, 'mail', true);
 			}
 		}
 		

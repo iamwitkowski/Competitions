@@ -7,6 +7,7 @@
 	 */
 	
 	namespace competitions;
+	use competitions\mailService;
 	
 	class ChangeStatus
 	{
@@ -23,7 +24,8 @@
 		 *
 		 */
 		
-		function add_bulk_actions($bulk_actions) {
+		function add_bulk_actions($bulk_actions)
+		{
 			$bulk_actions['accept'] = __('Akceptuj', 'txtdomain');
 			$bulk_actions['reject'] = __('Odrzuć', 'txtdomain');
 			$bulk_actions['queued'] = __('Zmień na oczekujący', 'txtdomain');
@@ -35,14 +37,18 @@
 		 *
 		 */
 		
-		function accept_submission_bulk_action($redirect_url, $action, $post_ids) {
+		public function accept_submission_bulk_action($redirect_url, $action, $post_ids)
+		{
 			if ($action == 'accept') {
 				foreach ($post_ids as $post_id) {
-					update_post_meta($post_id, 'status', 'akcept');
+					update_post_meta($post_id, 'status', 'accept');
+					mailService::sendAccept($post_id);
 				}
 				$redirect_url = add_query_arg('accept', count($post_ids), $redirect_url);
 			}
+			
 			return $redirect_url;
+			
 		}
 		
 		/*
@@ -50,10 +56,12 @@
 		 *
 		 */
 		
-		function reject_submission_bulk_action($redirect_url, $action, $post_ids) {
+		function reject_submission_bulk_action($redirect_url, $action, $post_ids)
+		{
 			if ($action == 'reject') {
 				foreach ($post_ids as $post_id) {
-					update_post_meta($post_id, 'status', 'odrzucony');
+					update_post_meta($post_id, 'status', 'reject');
+					mailService::sendReject($post_id);
 				}
 				$redirect_url = add_query_arg('reject', count($post_ids), $redirect_url);
 			}
@@ -65,10 +73,11 @@
 		 *
 		 */
 		
-		function queued_submission_bulk_action($redirect_url, $action, $post_ids) {
+		function queued_submission_bulk_action($redirect_url, $action, $post_ids)
+		{
 			if ($action == 'queued') {
 				foreach ($post_ids as $post_id) {
-					update_post_meta($post_id, 'status', 'oczekuje');
+					update_post_meta($post_id, 'status', 'waiting');
 				}
 				$redirect_url = add_query_arg('queued', count($post_ids), $redirect_url);
 			}
