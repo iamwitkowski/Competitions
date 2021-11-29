@@ -99,9 +99,4 @@
 			
 			$new_mail_id = wp_insert_post($mailLog);
 		}
-		
-		
-	
-		
-		
 	}

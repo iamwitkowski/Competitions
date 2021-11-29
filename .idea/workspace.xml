@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b66f624d-071b-4977-b3b0-100491f0ca69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/admin/Winner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/API.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/API.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/CPT/EmailLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/CPT/EmailLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/CPT/Submissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/CPT/Submissions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/admin/ChangeStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/admin/ChangeStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/admin/Columns.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/admin/Columns.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/mailService/mailService.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mailService/mailService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/competitions.php" beforeDir="false" afterPath="$PROJECT_DIR$/competitions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-templates/accept.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail-templates/accept.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-templates/confirm.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail-templates/confirm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-templates/reject.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail-templates/reject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-templates/winner.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail-templates/winner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fields.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +63,7 @@
       <workItem from="1637878360276" duration="1717000" />
       <workItem from="1637912148464" duration="6262000" />
       <workItem from="1637920419357" duration="15005000" />
-      <workItem from="1638170965589" duration="6932000" />
+      <workItem from="1638170965589" duration="7078000" />
     </task>
     <servers />
   </component>
