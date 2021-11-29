@@ -17,6 +17,8 @@
 			add_filter('handle_bulk_actions-edit-submission',  array( $this, 'accept_submission_bulk_action' ), 10, 3);
 			add_filter('handle_bulk_actions-edit-submission',  array( $this, 'reject_submission_bulk_action' ), 10, 3);
 			add_filter('handle_bulk_actions-edit-submission',  array( $this, 'queued_submission_bulk_action' ), 10, 3);
+			add_filter('handle_bulk_actions-edit-submission',  array( $this, 'winner_submission_bulk_action' ), 10, 3);
+			
 		}
 		
 		/*
@@ -29,6 +31,8 @@
 			$bulk_actions['accept'] = __('Akceptuj', 'txtdomain');
 			$bulk_actions['reject'] = __('Odrzuć', 'txtdomain');
 			$bulk_actions['queued'] = __('Zmień na oczekujący', 'txtdomain');
+			$bulk_actions['winner'] = __('ZWYCIĘZCA KONKURSU', 'txtdomain');
+			
 			return $bulk_actions;
 		}
 		
@@ -83,4 +87,26 @@
 			}
 			return $redirect_url;
 		}
+		
+		/*
+    * set competition winner
+    *
+    */
+		
+		public function winner_submission_bulk_action($redirect_url, $action, $post_ids)
+		{
+			if ($action == 'winner') {
+				foreach ($post_ids as $post_id) {
+					update_post_meta($post_id, 'status', 'WINNER');
+					mailService::sendWinner($post_id);
+				}
+				$redirect_url = add_query_arg('winner', count($post_ids), $redirect_url);
+			}
+			
+			return $redirect_url;
+			
+			}
+		
+		
+		
 	}

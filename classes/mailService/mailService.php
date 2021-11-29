@@ -2,6 +2,8 @@
 	/*
 	 * class responsible to mail notifications
 	 *
+	 * @author MW
+	 *
 	 */
 	namespace competitions;
 	
@@ -10,6 +12,7 @@
 		function __construct()
 		{
 			add_action( 'transition_post_status', array( $this, 'send_confirmation' ), 10, 3);
+	
 			
 		}
 		
@@ -18,8 +21,8 @@
 		{
 			if ( ( $new == 'draft' ) && ( $old != 'publish' || $old != 'auto-draft' ||  $old != 'draft' ) && ( $post->post_type == 'submission' ) )
 			{
-				$emailto = get_field('mail', $post->ID);
-				$subject = 'Przyjęliśmy zgłoszenie. Dziękujemy za udział w konkursie';
+				$emailto = get_field('mail', $post_id);
+				$subject = 'Zgłoszenie przyjęte';
 				ob_start();
 				include(ROOT_DIR . '/mail-templates/confirm.php');
 				$email_content = ob_get_contents();
@@ -27,8 +30,8 @@
 				$headers = array('Content-Type: text/html; charset=UTF-8');
 				wp_mail($emailto, $subject, $email_content, $headers);
 				
-				
-				$mailLog['post_title'] = ''.$subject.' '.$emailto.'';
+				$currentDate = date("Y-m-d-H:i");
+				$mailLog['post_title'] = ''.$currentDate.' '.$subject.' '.$emailto.'';
 				$mailLog['post_status'] = 'draft';
 				$mailLog['post_type'] = 'email-log';
 				
@@ -50,8 +53,8 @@
 			$headers = array('Content-Type: text/html; charset=UTF-8');
 			wp_mail($emailto, $subject, $email_content, $headers);
 			
-			
-			$mailLog['post_title'] = ''.$subject.' '.$emailto.'';
+			$currentDate = date("Y-m-d-H:i");
+			$mailLog['post_title'] = ''.$currentDate.' '.$subject.' '.$emailto.'';
 			$mailLog['post_status'] = 'draft';
 			$mailLog['post_type'] = 'email-log';
 			
@@ -70,13 +73,35 @@
 			$headers = array('Content-Type: text/html; charset=UTF-8');
 			wp_mail($emailto, $subject, $email_content, $headers);
 			
-			
-			
-			$mailLog['post_title'] = ''.$subject.' '.$emailto.'';
+			$currentDate = date("Y-m-d-H:i");
+			$mailLog['post_title'] = ''.$currentDate.' '.$subject.' '.$emailto.'';
 			$mailLog['post_status'] = 'draft';
 			$mailLog['post_type'] = 'email-log';
 			
 			$new_mail_id = wp_insert_post($mailLog);
 		}
+		
+		public static function sendWinner($emailTo)
+		{
+			$emailto = get_field('competition_winner', 'option');
+			$subject = get_field('mail_subject',  'option');
+			ob_start();
+			include(ROOT_DIR . '/mail-templates/winner.php');
+			$email_content = ob_get_contents();
+			ob_end_clean();
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			wp_mail($emailto, $subject, $email_content, $headers);
+			
+			$currentDate = date("Y-m-d-H:i");
+			$mailLog['post_title'] = ''.$currentDate.' '.$subject.' '.$emailto.'';
+			$mailLog['post_status'] = 'draft';
+			$mailLog['post_type'] = 'email-log';
+			
+			$new_mail_id = wp_insert_post($mailLog);
+		}
+		
+		
+	
+		
 		
 	}

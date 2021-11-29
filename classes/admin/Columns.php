@@ -1,6 +1,9 @@
 <?php
 	/*
 	 * add custom columns to submission list in WP-admin
+	 *
+	 * @author MW
+	 *
 	 */
 	namespace competitions;
 	

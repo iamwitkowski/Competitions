@@ -2,6 +2,8 @@
 	/*
 	 * create E-mail log for monitor e-mails
 	 *
+	 * @author MW
+	 *
 	 */
 	
 	namespace competitions;

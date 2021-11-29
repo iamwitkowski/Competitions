@@ -3,6 +3,7 @@
 	 * API routes and functions
 	 *
 	 * @author MW
+	 *
 	 */
 	
 	namespace competitions;

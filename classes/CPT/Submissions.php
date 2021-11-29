@@ -3,6 +3,8 @@
 	/*
 	 * create sumbissions CPT
 	 *
+	 * @author MW
+	 *
 	 */
 	
 	namespace competitions;

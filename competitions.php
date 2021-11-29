@@ -18,6 +18,7 @@
 	include ('classes/admin/Columns.php');
 	include ('classes/admin/ChangeStatus.php');
 	include ('classes/mailService/mailService.php');
+	include ('classes/admin/Winner.php');
 	
 	include ('inc/callbacks.php');
 	include ('inc/fields.php');
@@ -29,6 +30,7 @@
 	use competitions\Columns;
 	use competitions\ChangeStatus;
 	use competitions\mailService;
+	use competitions\Winner;
 	
 	$api = new API();
 	$api->createAPI();
@@ -41,7 +43,7 @@
 	
 	$mailService = new mailService();
 	
-	
+	$winner = new Winner();
 	
 	
 	
