@@ -12,10 +12,11 @@
 		function __construct()
 		{
 			add_action( 'transition_post_status', array( $this, 'send_confirmation' ), 10, 3);
-	
-			
 		}
 		
+		/*
+		 * functions responsible for send e-mail messages
+		 */
 		
 		function send_confirmation( $new, $old, $post )
 		{

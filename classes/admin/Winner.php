@@ -1,5 +1,12 @@
 <?php
 	
+	/*
+	 * create e-mail content creator in dashboard
+	 *
+	 * @author MW
+	 *
+	 */
+	
 	namespace competitions;
 	
 	use competitions\mailService;

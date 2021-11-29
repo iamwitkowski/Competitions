@@ -3,7 +3,6 @@
 	 * API routes and functions
 	 *
 	 * @author MW
-	 *
 	 */
 	
 	namespace competitions;
@@ -14,11 +13,12 @@
 	
 	class API
 	{
-		public $api;
+		public function __construct() {
+			add_action( 'rest_api_init', array( $this, 'createAPI' ));
+		}
 		
 		public function createAPI()
 		{
-			add_action('rest_api_init', function () {
 				register_rest_route(''.COMPETITION_NAME.'/v1', '/all/', array(
 					'methods' => 'GET',
 					'callback' => 'api_get_callback'
@@ -27,7 +27,6 @@
 					'methods' => 'POST',
 					'callback' => 'api_post_callback'
 				));
-			});
 		}
 	}
 

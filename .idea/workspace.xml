@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b66f624d-071b-4977-b3b0-100491f0ca69" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/API.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/API.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/admin/Winner.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/admin/Winner.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/mailService/mailService.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/mailService/mailService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/fields.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fields.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/competitions.php" beforeDir="false" afterPath="$PROJECT_DIR$/competitions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +68,8 @@
       <workItem from="1637878360276" duration="1717000" />
       <workItem from="1637912148464" duration="6262000" />
       <workItem from="1637920419357" duration="15005000" />
-      <workItem from="1638170965589" duration="7078000" />
+      <workItem from="1638170965589" duration="11422000" />
+      <workItem from="1638203324287" duration="144000" />
     </task>
     <servers />
   </component>
@@ -72,5 +78,16 @@
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>$PROJECT_DIR$/../../..</wordpressPath>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/competitions.php</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

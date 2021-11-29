@@ -2,7 +2,7 @@
 	
 	/*
 	Plugin Name: Competitions
-	Plugin URI: http://zakoduje.com.pl
+	Plugin URI: https://github.com/iamwitkowski/Competitions
 	Description: Wtyczka do konkursów organizowanych przez 19Południk
 	Version: 1.0
 	Author: mateuszwitkowski
@@ -33,7 +33,6 @@
 	use competitions\Winner;
 	
 	$api = new API();
-	$api->createAPI();
 	
 	$submission = new Submissions();
 	$emailLog = new EmailLog();
